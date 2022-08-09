@@ -1,0 +1,9 @@
+table, th, td {
+    border:1px solid black;
+  }
+  .aqua-bg{
+    background-color: aqua;
+  }
+  td:hover{
+    background-color: red;
+  }
