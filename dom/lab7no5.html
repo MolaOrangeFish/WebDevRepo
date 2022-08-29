@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    table, td,th {
+        border: 2px solid black;
+      }
+      </style>
+    <script>
+        function adddata(){
+            var nameInput = document.getElementById("name")
+            var name = nameInput.value
+            var addInput = document.getElementById("add")
+            var add = addInput.value
+            var telInput = document.getElementById("tel")
+            var tel = telInput.value
+          
+            var td1 = document.createElement("td")
+            td1.innerHTML = name
+            var td2 = document.createElement("td")
+            td2.innerHTML = add
+            var td3 = document.createElement("td")
+            td3.innerHTML = tel
+
+            var tr = document.createElement("tr")
+            tr.appendChild(td1)
+            tr.appendChild(td2)
+            tr.appendChild(td3)
+            
+           var row = document.getElementById("addrow")
+           row.appendChild(tr)
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <p><label for="">ชื่อลูกค้า :</label>
+            <input type="text" id ='name'>
+        </p>
+        <p><label for="">ที่อยู่ :</label>
+            <input type="text" id = 'add'>
+        </p>
+        <p><label for="">โทรศัพท์ :</label>
+            <input type="tel" id = 'tel'>
+        </p>
+        <p><input type="button" id="addButton" value="Add data" onclick = "adddata()"></p>
+    </form>
+
+    <table id = "addrow">
+        <tr>
+            <th>ชื่อลูกค้า</th>
+            <th>ที่อยู่</th>
+            <th>โทรศัพท์</th>
+        </tr>
+        
+    </table>
+    
+</body>
+</html>
