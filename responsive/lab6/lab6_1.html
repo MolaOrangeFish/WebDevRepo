@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let student = [
+            {
+                fullname: 'นายตั้งใจ เรียนมาก',
+                age: 18,
+                year: 1,
+                gpa: 3.40,
+                help: true
+            },
+            {
+                fullname: 'นายส่งงาน ตลอดมา',
+                age: 19,
+                year: 2,
+                gpa: 3.00,
+                help: false
+            },
+            {
+                fullname: 'นางสาวใสใจ ดีงาม',
+                age: 20,
+                year: 3,
+                gpa: 2.90,
+                help: true
+            },
+            {
+                fullname: 'นางสาวใจ ดี',
+                age: 33,
+                year: 4,
+                gpa: 2.90,
+                help: true
+            },
+            {
+                fullname: 'นางสาวปี 8',
+                age: 33,
+                year: 8,
+                gpa: 3,
+                help: true
+            },
+        ]
+        let stddata = [[], [], [], [], [], [], [], []]
+    </script>
+</head>
+
+<body>
+    <script>
+        function summaryprint(stddata) {
+            for (let k = 0; k < stddata.length; k++) {
+                console.log("ชั่นปีที่" + (k + 1))
+
+                if (stddata[k].length == 0)
+                    console.log("ไม่มี")
+
+                for (let l = 0; l < stddata[k].length; l++) {
+                    console.log(stddata[k][l])
+                }
+            }
+        }
+        function push(year, text) {
+            stddata[year - 1].push(text)
+        }
+        function get(fullname, age, year, gpa, help) {
+            if (year >= 2 && help == true && gpa >= 2.75) {
+                let text = fullname + " เกิดเมื่อปี " + (2565 - age) + " ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย"
+                console.log(text)
+                push(year, text)
+            }
+            else if (gpa >= 3.20) {
+                let text = fullname + " เกิดเมื่อปี " + (2565 - age) + " ได้ทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังไม่ได้ช่วยงานภาควิชาด้วย"
+                console.log(text)
+                push(year, text)
+            }
+            else {
+                let text = fullname + " เกิดเมื่อปี " + (2565 - age) + " ไม่ได้รับทุนการศึกษา"
+                console.log(text)
+            }
+
+        }
+        function setdata(student) {
+            let data = []
+            data[0] = student.fullname
+            data[1] = student.age
+            data[2] = student.year
+            data[3] = student.gpa
+            data[4] = student.help
+            return data
+        }
+
+        for (let i = 0; i < student.length; i++) {
+            let getdataarr = setdata(student[i])
+            let check = get(getdataarr[0], getdataarr[1], getdataarr[2], getdataarr[3], getdataarr[4])
+        }
+        console.log("\n")
+        summaryprint(stddata)
+    </script>
+</body>
+
+
+</html>
