@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function summation() {
+            var num1 = Number(document.querySelector("#num1").value)
+            var num2 = Number(document.querySelector("#num2").value)
+            var opera = document.getElementById("op").value
+            console.log(opera)
+            switch (Number(opera)){
+                case 0:
+                    var result = num1 + num2
+                    break
+                case 1:
+                    var result = num1 - num2
+                    break
+                case 2:
+                    var result = num1 * num2
+                    break
+                case 3:
+                    var result = num1 / num2
+                    break
+
+                
+            }
+
+
+            document.getElementById("result").value = result
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <p>
+        <input type="text" id="num1"  value = "0">
+        <select id="op">
+            
+              <option value="0">+</option>
+              <option value="1">-</option>
+              <option value="2">*</option>
+              <option value="3">/</option>
+            
+            </optgroup>
+          </select>
+        <input type="text" id="num2" value = "0"> =
+        <input type="text" id="result">
+        <input type="submit" value="go go" onclick="summation()">
+    </p>
+
+
+</body>
+
+</html>

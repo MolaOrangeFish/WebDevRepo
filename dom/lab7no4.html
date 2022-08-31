@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function checkthe(flag1,flag2,flag3){
+            if(flag1==true&&flag2==true&&flag3==true){
+                console.log("Found the")
+                return 1
+            }
+            else
+                return 0
+        }
+        function countTheWord(str) {
+            let count = 0,flag1=false,flag2=false,flag3=false
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === 't' || str[i] === "T" && i < str.length) {
+                    console.log("Getting in t")
+                    flag1 = true
+                }
+                else if (str[i] === 'h' || str[i] === "H" && i< str.length) {
+                    console.log("Getting in h")
+                    flag2 = true
+                }
+                else if (str[i] === 'e' || str[i] === "E" && i< str.length) {
+                    console.log("Getting in e")
+                    flag3 = true
+                }
+                else{
+                    flag1=flag2=flag3=false
+                }
+                if (checkthe(flag1,flag2,flag3) == 1){
+                    count++
+                }
+            }
+            console.log(count)
+            alert("มี The ทั้งหมด "+count+" คำ")
+        }
+    </script>
+</head>
+
+<body>
+    The eighth ruler of the Fifth Dunasty in the late 25th century.<br><br>
+    <a href="#" onclick="countTheWord('The eighth ruler of the Fifth Dunasty in the late 25th century')">
+        Click for count 'the'</a>
+
+</body>
+
+</html>
